@@ -20,7 +20,7 @@ void loop() {
 
 void updateSliderValues() {
   for (int i = 0; i < NUM_SLIDERS; i++) {
-     analogSliderValues[i] = analogRead(analogInputs[i]);
+     analogSliderValues[i] = min(map(analogRead(analogInputs[i]), 0, 1008, 0, 1023), 1023);
   }
 }
 
